@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f2f4; /* Neutral background */
+}
+.maincs {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: #ffffff; /* Clean white background */
+}
+.maincs .active {
+  background-color: #e1e8ee; /* Light gray for active elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-bottom: 1px solid #007ace; /* Accent color */
+}
+.form-switch .form-check-input {
+  background-color: #d6dde4; /* Light gray for form elements */
+  border-color: #a1a1a1; /* Neutral border color */
+}
+.form-check-input:checked {
+  background-color: #007ace; /* Accent color for checked state */
+  border-color: #007ace;
+}
+.listDash {
+  height: 390px;
+  overflow-y: auto;
+  background-color: #ffffff; /* Clean white background */
+}
+.listDash::-webkit-scrollbar-thumb {
+  background-color: #a1a1a1; /* Neutral scrollbar color */
+}
+.listDash::-webkit-scrollbar-track {
+  background-color: #f0f2f4; /* Light background for the track */
+}
+.loader {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+  backdrop-filter: blur(4px); /* Slight blur for effect */
+}
+.loader2 {
+  border: 8px solid #007ace; /* Accent color for loader */
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  animation: looper 2s linear infinite; /* Simpler animation */
+}
+@keyframes looper {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

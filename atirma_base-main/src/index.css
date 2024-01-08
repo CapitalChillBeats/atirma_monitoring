@@ -1,24 +1,13 @@
-:root {
-  /* Define CSS variables for easy theme changes */
-  --main-font: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', sans-serif;
-  --code-font: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
-  --text-color: #333; /* Dark gray for better readability */
-  --background-color: #f8f8f8; /* Light background for contrast */
-}
-
 body {
   margin: 0;
-  font-family: var(--main-font);
-  color: var(--text-color);
-  background-color: var(--background-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6; /* Improve readability */
 }
 
 code {
-  font-family: var(--code-font);
-  background-color: #eee; /* Light background for code blocks */
-  padding: 0.2em 0.4em; /* Padding around code */
-  border-radius: 3px; /* Rounded corners for code blocks */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }

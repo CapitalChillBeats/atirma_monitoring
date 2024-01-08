@@ -13,7 +13,8 @@ import toast, { Toaster } from "react-hot-toast";
 function App() {
   const [screen, setScreen] = useState(0);
   const [err, setErr] = useState(false);
-  const [currentRepo, setCurrentRepo] = useState({});
+  const [currentRepo, setCurrentRepo] = useState();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     if (window.location.pathname == "/" || window.location.pathname == "/git_auth") {
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
       <Toaster />
+      {console.log(search)}
       <div className="row mx-0">
         <Router>
           {(window.location.pathname == "/" || window.location.pathname == "/pull-requests" || window.location.pathname == "/workflows" || window.location.pathname == "/add-repo") && (
@@ -34,11 +36,13 @@ function App() {
               <Dash activerep={(e) => setCurrentRepo(e)} isactive={currentRepo} />
             </div>
           )}
-          <div className="col-10 bg-light p-0 mx-auto">
-            {(window.location.pathname == "/" || window.location.pathname == "/pull-requests" || window.location.pathname == "/workflows" || window.location.pathname == "/add-repo") && <Header />}
+          <div className="col-10  p-0 mx-auto #0f1b2a " style={{ background: "#000716" }}>
+            {(window.location.pathname == "/" || window.location.pathname == "/pull-requests" || window.location.pathname == "/workflows" || window.location.pathname == "/add-repo") && (
+              <Header searchTerm={(e) => setSearch(e)} cSearch={search} />
+            )}
             <Routes>
               {/* <Route path="/" element={<Login />} /> */}
-              <Route path="/" element={<Main isactive={currentRepo} />} />
+              <Route path="/" element={<Main isactive={currentRepo} tsearch={search} />} />
 
               {/* <Route path="/main" element={<Main isactive={currentRepo} />} /> */}
             </Routes>

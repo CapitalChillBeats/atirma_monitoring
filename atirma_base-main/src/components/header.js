@@ -1,13 +1,14 @@
 import React from "react";
 import { useCookies } from "react-cookie";
 import toast, { Toaster } from "react-hot-toast";
-const Header = () => {
+const Header = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["uToken"]);
   const handleGitAuth = () => {
     window.open("http://127.0.0.1:8000/github-auth", "_blank");
   };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "white" }}>
+    <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "#0f1b2a" }}>
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -23,11 +24,14 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="d-flex w-75 ">
             <input
-              className="form-control me-2 w-100 border-0 rounded-pill bg-light"
+              className="form-control me-2 w-100 border-0 rounded-pill text-light"
+              style={{ background: "#000716" }}
               type="search"
               // style={{ backgroundColor: "#101014" }}
               placeholder="Search"
               aria-label="Search"
+              value={props.cSearch}
+              onChange={(e) => props.searchTerm(e.target.value)}
             />
           </form>
           <div className="d-flex justify-items-end">
